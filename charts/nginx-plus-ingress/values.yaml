@@ -8,7 +8,7 @@ nginx-ingress:
     enableSnippets: true
     image:
       repository: ghcr.io/mhermsdorferf5/nginx-plus-ingress
-      tag: 2.3.0-SNAPSHOT-979db22
+      tag: 2.4.1-SNAPSHOT-413c0bb
     nginxplus: true
     nginxStatus:
       allowCidrs: 0.0.0.0/0
