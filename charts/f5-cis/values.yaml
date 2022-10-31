@@ -7,13 +7,13 @@ f5-cis:
     create: true
     name: bigip-login
   namespace: f5-cis
-  args:
-    bigip_url: 10.2.1.89
-    bigip_partition: f5-bigip-k8s-ctlr
-    pool_member_type: nodeport
-    manage-configmaps: true
-    hubmode: true
   image:
     user: f5networks
     repo: k8s-bigip-ctlr
     pullPolicy: Always
+args:
+  bigip_url: 10.2.1.89
+  bigip_partition: f5-bigip-k8s-ctlr
+  pool_member_type: nodeport
+  manage-configmaps: true
+  hubmode: true
