@@ -13,7 +13,7 @@ serviceAccount:
   create: true
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: bigip-login
+  name: bigip-ctlr-service-account
 # This namespace is where the Controller lives;
 namespace: f5-cis
 args:
@@ -21,8 +21,16 @@ args:
   # NOTE: helm has difficulty with values using `-`; `_` are used for naming
   # and are replaced with `-` during rendering.
   # REQUIRED Params
-  bigip-url: 10.2.1.89
+  bigip_url: 10.2.1.89
+  insecure: true
   bigip_partition: f5-bigip-ctlr
+  pool_member_type: nodeport
+  manage_routes: false
+  manage_ingress: false
+  custom-resource-mode: false
+  manage-configmaps: true
+  hubmode: true
+  log-as3-response: true
   # OPTIONAL PARAMS -- uncomment and provide values for those you wish to use.
   # verify_interval:
   # node-poll_interval:
@@ -37,12 +45,10 @@ args:
   # namespaces: ["foo", "bar"]
   # namespace_label:
   # node_label_selector:
-  pool_member_type: nodeport
   # resolve_ingress_names:
   # running_in_cluster:
   # use_node_internal:
   # use_secrets:
-  insecure: true
   # custom-resource-mode: true
   # log-as3-response: true
   # gtm-bigip-password
