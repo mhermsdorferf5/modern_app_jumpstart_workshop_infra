@@ -1,18 +1,27 @@
----
-f5-cis:
-  bigip_login_secret: f5-bigip-ctlr-login
-  rbac:
-    create: true
-  serviceAccount:
-    create: true
-    name: bigip-login
-  namespace: f5-cis
-  image:
-    user: f5networks
-    repo: k8s-bigip-ctlr
-    pullPolicy: Always
-bigip_url: 10.2.1.89
-bigip_partition: f5-bigip-k8s-ctlr
-pool_member_type: nodeport
-manage-configmaps: true
-hubmode: true
+bigip_login_secret:  bigip-login
+rbac:
+  create: true
+serviceAccount:
+  create: true
+  name: bigip-login
+namespace: f5-cis
+args:
+  bigip_url: 10.2.1.89
+  bigip_partition: k8s-ingress
+  log_level: INFO
+  pool_member_type: nodeport
+  insecure: true
+  as3_validation: true
+  manage_routes: false
+  manage_ingress: false
+  manage_configmaps: true
+image:
+  user: f5networks
+  repo: k8s-bigip-ctlr
+  pullPolicy: Always
+nodeSelector: {}
+tolerations: []
+livenessProbe: {}
+readinessProbe: {}
+resources: {}
+version: latest
