@@ -1,13 +1,13 @@
-bigip_login_secret:  bigip-login
+bigip_login_secret:  bigip_login
 rbac:
   create: true
 serviceAccount:
   create: true
-  name: bigip-login
-namespace: f5-cis
+  name: bigip_login
+namespace: f5_cis
 args:
   bigip_url: 10.2.1.89
-  bigip_partition: k8s-ingress
+  bigip_partition: k8sIngress
   log_level: INFO
   pool_member_type: nodeport
   insecure: true
