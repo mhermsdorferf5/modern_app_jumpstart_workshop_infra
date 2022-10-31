@@ -11,9 +11,8 @@ f5-cis:
     user: f5networks
     repo: k8s-bigip-ctlr
     pullPolicy: Always
-args:
-  bigip_url: 10.2.1.89
-  bigip_partition: f5-bigip-k8s-ctlr
-  pool_member_type: nodeport
-  manage-configmaps: true
-  hubmode: true
+bigip_url: 10.2.1.89
+bigip_partition: f5-bigip-k8s-ctlr
+pool_member_type: nodeport
+manage-configmaps: true
+hubmode: true
